@@ -1,0 +1,89 @@
+html {
+    background-color: slategrey;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    background-color: lightsteelblue;
+    
+    min-width: 400px;
+    max-width: 900px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+img {
+    width: 70%;
+    vertical-align: middle;
+    display: inline;
+    margin: 0;
+}
+
+.logo{
+    font-family: 'Paytone One', sans-serif;
+    font-size: 200%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+h2 {
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+p{
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.choix {
+    margin-top: 5px;
+    width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   font-family: 'Ubuntu Mono', monospace;
+}
+
+.choix .no1{
+width: 150px;
+height: 50px;
+display: flex;
+justify-content: center;
+background-color: slategrey;
+border: 5px solid #8097e2;
+border-radius: 10px;
+}
+
+.choix .no2{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: slategrey;
+    border: 5px solid #8097e2;
+    border-radius: 10px;
+}
+
+.choix.no3{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: slategrey;
+    border: 5px solid #8097e2;
+    border-radius: 10px;
+}
