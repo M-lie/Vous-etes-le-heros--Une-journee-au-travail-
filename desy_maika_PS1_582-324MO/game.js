@@ -158,5 +158,7 @@ function goToChapter(chapterName){
 };
 
 function click(){
+    chaptersObj[chapterName]["options"][0]["choix1"]["action"];
     chaptersObj[chapterName]["options"][0]["choix2"]["action"];
+    chaptersObj[chapterName]["options"][0]["choix3"]["action"];
 }
