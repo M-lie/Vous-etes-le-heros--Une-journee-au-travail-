@@ -5,15 +5,14 @@ let chaptersObj = {
         subtitle: 'réveille',
         text:"Vous vous réveillez en retard pour votre journée de travail. Voulez-vous vous dépêcher ou y allez lentement?",
         img: "./assets/lit.jpg",
-        options:{option1 :{optionText: "se dépêcher", action:"goToChapter('dépêcher')"},
-        option2 :{optionText: "lentement", action:"goToChapter('lentement')"},},},
+        options:{choix1 :{texte: "se dépêcher", action:"goToChapter('dépêcher')"},
+        choix2 :{texte: "lentement", action:"goToChapter('lentement')"},},},
 
     dépêcher : {
         subtitle: "dépêcher",
         text:"Vous tébuchez dans les escaliers et vous mourrez.",
         img: "./assets/escaliers.jpg",
-        options: { choix1 :{texte:"se réveiller", action: "goToChapter('intro')"},},
-    },
+        options: { choix1 :{texte:"se réveiller", action: "goToChapter('intro')"},},},
 
      lentement : {
         subtitle: "cuisine",
@@ -21,8 +20,7 @@ let chaptersObj = {
         img: "./assets/cuisine.jpg",
         options: { choix1 : {texte:"pas manger", action: "goToChapter(pasmanger)"},
     choix2: {texte:"manger", action: "goToChapter('manger')"},
-choix3: { texte:"les deux", action: "goToChapter(deux)"},},
-    },
+choix3: { texte:"les deux", action: "goToChapter(deux)"},},},
 
     pasmanger : {
         subtitle: "famine",
@@ -151,6 +149,14 @@ choix3: { texte:"métro", action: "goToChapter('metro')"},},},
 
 
 function goToChapter(chapterName){
-    console.log(chaptersObj[chapterName]["subtitle"]);
-    console.log(chaptersObj[chapterName]["text"]);
+    document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
+    document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
+    document.querySelector(".travail").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="image">`
+    document.querySelector(".choix no1").innerHTML= chaptersObj[chapterName]["options"][0]["choix1"]["texte"];
+    document.querySelector(".choix no2").innerHTML= chaptersObj[chapterName]["options"][0]["choix2"]["texte"];
+    document.querySelector(".choix no3").innerHTML= chaptersObj[chapterName]["options"][0]["choix3"]["texte"];
 };
+
+function click(){
+    chaptersObj[chapterName]["options"][0]["choix2"]["action"];
+}
