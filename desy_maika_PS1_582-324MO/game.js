@@ -148,7 +148,7 @@ choix3: ["métro"], action: "goToChapter('metro')"},
         subtitle: "fête",
         text:"Vous décidez d'aller à la fête et vous vous amusez. Ne vous coucher pas trop tard demain vous retravaillez.",
         img: "./assets/fête.jpg",
-        options: { choix1 : ["se réveiller"], action: "goToChapter('intro')"},
+        options: { choix1 : { texte:"se réveiller", action: "goToChapter('intro')"},},
     },
 
 };
