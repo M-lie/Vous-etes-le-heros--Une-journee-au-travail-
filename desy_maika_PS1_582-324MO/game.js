@@ -156,9 +156,12 @@ choix3: ["métro"], action: "goToChapter('metro')"},
 
 
 function goToChapter(chapterName){
-    console.log(chaptersObj[chapterName]["subtitle"]);
-    console.log(chaptersObj[chapterName]["text"]);
-    "<img src='$[chaptersObj[chapterName].img'/>";
+    document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
+    document.querySelector(".text").innerHTML=chaptersObj[chapterName]["text"];
+    document.querySelector(".travail").innerHTML="<img src='$[chaptersObj[chapterName].img'/>";
+    document.querySelector(".choix no1").innerHTML=chaptersObj[chapterName][options][0]["choix1"];
+    document.querySelector(".choix no2").innerHTML=chaptersObj[chapterName][options][0]["choix2"];
+    document.querySelector(".choix no3").innerHTML=chaptersObj[chapterName][options][0]["choix3"];
 for(i = 1; i < chaptersObj[chapterName].options.lenght; i++) {
     <a class="choix no1" onclick ="$[chaptersObj[chapterName].options[i].action]">$[chaptersObj[chapterName].options[i].choix1]</a>
 }
