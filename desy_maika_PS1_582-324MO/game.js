@@ -156,7 +156,7 @@ choix3: ["métro"], action: "goToChapter('metro')"},
 
 
 function goToChapter(chapterName){
-    console.log(chaptersObj[chapterName]["subtitle"]);
+    console.log(chaptersObj[chapterName]["subtitle"]);tt
     console.log(chaptersObj[chapterName]["text"]);
     "<img src='$[chaptersObj[chapterName].img'/>";
 for(i = 1; i < chaptersObj[chapterName].options.lenght; i++) {
