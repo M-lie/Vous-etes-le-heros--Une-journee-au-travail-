@@ -167,8 +167,5 @@ function goToChapter(chapterName){
 
 };
 
-for(i = 1; i < chaptersObj[chapterName].options.lenght; i++) {
-    <a class="choix no1" onclick ="$[chaptersObj[chapterName].options[i].action]">$[chaptersObj[chapterName].options[i].choix1]</a>
-};
 
 
