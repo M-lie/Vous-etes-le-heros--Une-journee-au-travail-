@@ -31,6 +31,10 @@ img {
     margin: 0;
 }
 
+.imgchanger {
+    text-align: center;
+}
+
 .logo{
     font-family: 'Paytone One', sans-serif;
     font-size: 200%;
