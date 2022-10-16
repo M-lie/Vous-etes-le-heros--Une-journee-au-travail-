@@ -11,13 +11,15 @@ let chaptersObj = {
     dépêcher : {
         subtitle: "dépêcher",
         text:"Vous tébuchez dans les escaliers et vous mourrez.",
-        img: "./assets/escaliers.jpg",
-        options: [{texte:"se réveiller", action: "goToChapter('intro')"},]},
+        img: "./assets/escaliers.jpeg",
+        options: [{texte:"boutton qui sert à rien", action: "goToChapter('intro')"},
+        {texte:"se réveiller", action: "goToChapter('intro')"},
+        {texte:"boutton qui sert à rien", action: "goToChapter('intro')"},]},
 
      lentement : {
         subtitle: "cuisine",
         text:"vous arrivez dans la cuisine et vous êtes en retard. Voulez-vous mangez? Que faites-vous?",
-        img: "./assets/cuisine.jpg",
+        img: "./assets/cuisine.png",
         options:  [{texte:"pas manger", action: "goToChapter(pasmanger)"},
      {texte:"manger", action: "goToChapter('manger')"},
  { texte:"les deux", action: "goToChapter(deux)"},]},
@@ -25,14 +27,14 @@ let chaptersObj = {
     pasmanger : {
         subtitle: "famine",
         text:"Vous mourez de faim.",
-        img: "./assets/famine.jpg",
+        img: "./assets/pasmanger.jpeg",
         options: [{texte: "se réveiller", action: "goToChapter('intro')"},]
     },
 
     manger : {
         subtitle: "manger",
         text:"Vous vous étouffez.",
-        img: "./assets/étouffer.jpg",
+        img: "./assets/étouffer.png",
         options: [{texte: "se réveiller", action: "goToChapter('intro')"},]
     },
 
@@ -104,7 +106,7 @@ let chaptersObj = {
 
     sérieux : {
         subtitle: "sérieux",
-        text:"Vous parlez sérieusement d'affaires, vous avez de très bon argument que votre paton vous donne une promotion. Après le travail vous renrez chez vous par le même transport que vous avez pris pour venir au travail.",
+        text:"Vous parlez sérieusement d'affaires, vous avez de très bon argument que votre patron vous donne une promotion. Après le travail vous renrez chez vous par le même transport que vous avez pris pour venir au travail.",
         img: "./assets/promotion.jpg",
     },
 
@@ -158,11 +160,7 @@ function goToChapter(chapterName){
     document.querySelector(".choix .no1").innerHTML= chaptersObj[chapterName]["options"][0]["texte"];
     document.querySelector(".choix .no2").innerHTML= chaptersObj[chapterName]["options"][1]["texte"];
     document.querySelector(".choix .no3").innerHTML= chaptersObj[chapterName]["options"][2]["texte"];
-    for(i = 0; i < chaptersObj[chapterName].options.lenght; i++) {
-        <button class="choix no1" onclick ="$[chaptersObj[chapterName].options[i].action]">$[chaptersObj[chapterName].options[i].choix1]</button>;
-        <button class="choix no2" onclick ="$[chaptersObj[chapterName].options[i].action]">$[chaptersObj[chapterName].options[i].choix2]</button>;
-        <button class="choix no3" onclick ="$[chaptersObj[chapterName].options[i].action]">$[chaptersObj[chapterName].options[i].choix3]</button>;
-    }
+   
     
 
 };

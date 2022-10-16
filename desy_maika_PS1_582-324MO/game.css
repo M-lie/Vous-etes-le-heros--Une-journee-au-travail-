@@ -25,7 +25,8 @@ body {
 }
 
 img {
-    width: 70%;
+    width: 800px;
+    height: 420px;
     vertical-align: middle;
     display: inline;
     margin: 0;
