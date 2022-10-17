@@ -22,7 +22,8 @@ let chaptersObj = {
         img: "./assets/cuisine.png",
         options:  [{texte:"pas manger", action: "goToChapter(pasmanger)"},
      {texte:"manger", action: "goToChapter('manger')"},
- { texte:"les deux", action: "goToChapter(deux)"},]},
+ { texte:"les deux", action: "goToChapter(deux)"},
+ {texte:"boutton qui sert à rien", action: "goToChapter('intro')"},]},
 
     pasmanger : {
         subtitle: "famine",
@@ -152,18 +153,29 @@ let chaptersObj = {
 
 function goToChapter(chapterName){
 
-    console.log(chaptersObj[chapterName]["subtitle"]);
+    console.log(chaptersObj[chapterName]['subtitle']);
     console.log(chaptersObj[chapterName]["text"]);
     document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
     document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
-    document.querySelector(".choix .no1").innerHTML= chaptersObj[chapterName]["options"][0]["texte"];
+    let choix = document.querySelector(".choix .no1").innerHTML= chaptersObj[chapterName]["options"][0]["texte"];
     document.querySelector(".choix .no2").innerHTML= chaptersObj[chapterName]["options"][1]["texte"];
     document.querySelector(".choix .no3").innerHTML= chaptersObj[chapterName]["options"][2]["texte"];
-   
+
+    for(let index = 0; index < chaptersObj[chapterName].options.lenght; index++) {
+        choix.onclick[0]= options[index]["action"];
+        choix.onclick[1]= options[index]["action"];
+        choix.onclick[2]= options[index]["action"];
+    }
+};
+
+    // for(chaptersObj = 0; chaptersObj <= 2; chaptersObj++) {
+    //document.querySelector(".choix .no1").innerHTML.onclick= chaptersObj[chapterName]["options"][0]["texte"]["action"];
+    //document.querySelector(".choix .no2").innerHTML.onclick= chaptersObj[chapterName]["options"][1]["texte"]["action"];
+    //document.querySelector(".choix .no3").innerHTML.onclick= chaptersObj[chapterName]["options"][2]["texte"]["action"];}
     
 
-};
+
 
 
 
