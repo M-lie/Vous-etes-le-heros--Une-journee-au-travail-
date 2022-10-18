@@ -159,13 +159,13 @@ function goToChapter(chapterName){
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
     document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
     let choix = document.querySelector(".choix .no1").innerHTML= chaptersObj[chapterName]["options"][0]["texte"];
-    document.querySelector(".choix .no2").innerHTML= chaptersObj[chapterName]["options"][1]["texte"];
-    document.querySelector(".choix .no3").innerHTML= chaptersObj[chapterName]["options"][2]["texte"];
+    choix = document.querySelector(".choix .no2").innerHTML= chaptersObj[chapterName]["options"][1]["texte"];
+    choix = document.querySelector(".choix .no3").innerHTML= chaptersObj[chapterName]["options"][2]["texte"];
 
     for(let index = 0; index < chaptersObj[chapterName].options.lenght; index++) {
-        choix.onclick[0]= options[index]["action"];
-        choix.onclick[1]= options[index]["action"];
-        choix.onclick[2]= options[index]["action"];
+        choix[0].onclick= options[index]["action"];
+        choix[1].onclick= options[index]["action"];
+        choix[2].onclick= options[index]["action"];
     }
 };
 
