@@ -158,14 +158,14 @@ function goToChapter(chapterName){
     document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
     document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
-    let choix = document.querySelector(".choix .no1").innerHTML= chaptersObj[chapterName]["options"][0]["texte"];
-    choix = document.querySelector(".choix .no2").innerHTML= chaptersObj[chapterName]["options"][1]["texte"];
-    choix = document.querySelector(".choix .no3").innerHTML= chaptersObj[chapterName]["options"][2]["texte"];
-
-    for(let index = 0; index < chaptersObj[chapterName].options.lenght; index++) {
-        choix[0].onclick= options[index]["action"];
-        choix[1].onclick= options[index]["action"];
-        choix[2].onclick= options[index]["action"];
+    let choix = document.querySelector(".choix .no1").innerHTML= chaptersObj[chapterName].options[0]["texte"];
+    choix = document.querySelector(".choix .no2").innerHTML= chaptersObj[chapterName].options[1]["texte"];
+    choix = document.querySelector(".choix .no3").innerHTML= chaptersObj[chapterName].options[2]["texte"];
+    for(let index = 0; index <= options.lenght; index++) {
+        
+        choix.onclick=`<button class="choix no1" onclick="${chaptersObj[chapterName].options[index].action}">`;
+    choix.onclick=`<button class="choix no2" onclick="${chaptersObj[chapterName].options[index].action}">`;
+    choix.onclick=`<button class="choix no3" onclick="${chaptersObj[chapterName].options[index].action}">`;
     }
 };
 
@@ -175,7 +175,9 @@ function goToChapter(chapterName){
     //document.querySelector(".choix .no3").innerHTML.onclick= chaptersObj[chapterName]["options"][2]["texte"]["action"];}
     
 
-
+    //choix.onclick=`<button class="choix no1" onclick="${chaptersObj[chapterName].options[index].action}">`;
+    //choix.onclick=`<button class="choix no2" onclick="${chaptersObj[chapterName].options[index].action}">`;
+    //choix.onclick=`<button class="choix no3" onclick="${chaptersObj[chapterName].options[index].action}">`;
 
 
 
