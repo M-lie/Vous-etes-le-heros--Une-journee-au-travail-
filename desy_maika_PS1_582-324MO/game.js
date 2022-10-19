@@ -160,6 +160,7 @@ function goToChapter(chapterName){
     document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
     document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
+
     
     let choix = document.querySelector(".choix");
     choix.innerHTML="";
@@ -176,6 +177,7 @@ function goToChapter(chapterName){
 goToChapter("intro");
 
 
+
 let key = false;
 
 function keytrue() {
@@ -190,16 +192,10 @@ function keyStatus() {
     if (key == false){
         goToChapter("metro2");
     }
-}
+};
 
 function keyfalse() {
     key = false;
     goToChapter("lentement");
-}
-
-    
-
-
-
-
+};
 
