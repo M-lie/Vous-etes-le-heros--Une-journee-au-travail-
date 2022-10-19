@@ -3,27 +3,25 @@ let chaptersObj = {
     
     intro : {
         subtitle: 'réveille',
-        text:"Vous vous réveillez en retard pour votre journée de travail. Voulez-vous vous dépêcher ou y allez lentement?",
+        text:"Vous vous réveillez en retard pour votre journée de travail. Voulez-vous vous dépêchez ou y allez lentement?",
         img: "./assets/lit.jpg",
         options:[{texte: "se dépêcher", action:"goToChapter('dépêcher')"},
-        {texte: "lentement", action:"goToChapter('lentement')"},]},
+        {texte: "lentement", action:"keyfalse()"},]},
 
     dépêcher : {
         subtitle: "dépêcher",
-        text:"Vous tébuchez dans les escaliers et vous mourrez.",
+        text:"Vous trébuchez dans les escaliers et vous mourez.",
         img: "./assets/escaliers.jpeg",
-        options: [{texte:"boutton qui sert à rien", action: "goToChapter('intro')"},
-        {texte:"se réveiller", action: "goToChapter('intro')"},
-        {texte:"boutton qui sert à rien", action: "goToChapter('intro')"},]},
+        options: [
+        {texte:"se réveiller", action: "goToChapter('intro')"},]},
 
      lentement : {
         subtitle: "cuisine",
-        text:"vous arrivez dans la cuisine et vous êtes en retard. Voulez-vous mangez? Que faites-vous?",
+        text:"Vous arrivez dans la cuisine et vous êtes en retard. Voulez-vous mangez? Ne pas mangez? Voulez-vous partir en même temps que mangez? Que faites-vous?",
         img: "./assets/cuisine.png",
-        options:  [{texte:"pas manger", action: "goToChapter(pasmanger)"},
+        options:  [{texte:"pas manger", action: "goToChapter('pasmanger')"},
      {texte:"manger", action: "goToChapter('manger')"},
- { texte:"les deux", action: "goToChapter(deux)"},
- {texte:"boutton qui sert à rien", action: "goToChapter('intro')"},]},
+ { texte:"les deux", action: "goToChapter('deux')"},]},
 
     pasmanger : {
         subtitle: "famine",
@@ -49,8 +47,8 @@ let chaptersObj = {
 
     autobus : {
         subtitle: "autobus",
-        text:"Vous vous faites écrasez par l'autobus.",
-        img: "./assets/autobus.jpg",
+        text:"L'autobus tombe dans un ravin et vous mourez.",
+        img: "./assets/ravin.jpg",
         options:[ {texte:"se réveiller", action: "goToChapter('intro')"},]},
 
     hélicoptère : {
@@ -70,7 +68,7 @@ let chaptersObj = {
 
     ignorer : {
         subtitle: "ignorer",
-        text:"Vous allez directement à votre bureau sans saluer votre collègue. Voulez-vous faire des appels ou travaillez sur votre ordinateur?",
+        text:"Vous allez directement à votre bureau sans saluer votre collègue. Voulez-vous faire des appels ou travailler sur votre ordinateur?",
         img: "./assets/bureau.jpg",
         options: [ {texte:"téléphone", action: "goToChapter('téléphone')"},
      { texte:"ordinateur", action: "goToChapter('ordinateur')"},]
@@ -85,14 +83,14 @@ let chaptersObj = {
 
     ordinateur : {
         subtitle: "ordinateur",
-        text:"Pendant que vous travaillez sur votre ordinateur, vos collègues vous lance des boules de papiers et vous mourrez",
+        text:"Pendant que vous travaillez sur votre ordinateur, vos collègues vous lance des boules de papiers et vous mourez",
         img: "./assets/papiers.jpg",
         options: [{texte: "se réveiller", action: "goToChapter('intro')"},]
     },
 
     saluer : {
         subtitle: "saluer",
-        text:"Vous saluez vos collègues et vous vous faites plein d'amis. Vous avez tellement une belle attitude que votre patron vous appel à son bureau. Vous arrivez à son bureau pour parler.",
+        text:"Vous saluez vos collègues et vous vous faites plein d'amis. Vous avez tellement une belle attitude que votre patron vous appel à son bureau. Vous arrivez à son bureau pour parler. Vou;ez vous faire une blague ou rester sérieux?",
         img: "./assets/collegue.jpg",
         options:[ {texte:"blague", action: "goToChapter('blague')"},
     {texte:"sérieux", action: "goToChapter('sérieux')"},]
@@ -100,34 +98,38 @@ let chaptersObj = {
 
     blague : {
         subtitle: "blague",
-        text:"Vous décidez de commencez la discussion par une blague. C'était tellement pas drôle que vous mourez de malaise.",
+        text:"Vous décidez de commencer la discussion par une blague. C'était tellement pas drôle que vous mourez de malaise.",
         img: "./assets/malaise.jpg",
         options: [{texte: "se réveiller", action: "goToChapter('intro')"},]
     },
 
     sérieux : {
         subtitle: "sérieux",
-        text:"Vous parlez sérieusement d'affaires, vous avez de très bon argument que votre patron vous donne une promotion. Après le travail vous renrez chez vous par le même transport que vous avez pris pour venir au travail.",
+        text:"Vous parlez sérieusement d'affaires, vous avez de très bon argument que votre patron vous donne une promotion. Après le travail vous rentrez chez vous, mais vous trouvez des clés par terre. Voulez-vous les prendre?",
         img: "./assets/promotion.jpg",
+        options: [ {texte:"oui", action: "keytrue()"},
+        {texte:"partir", action: "keyStatus()"},]
     },
 
-    autobus2: {
-        subtitle: "autobus2",
-        text:"Vous prenez l'autobus et il tombe dans un ravin",
-        img: "./assets/ravin.jpg",
-        options: [{texte: "se réveiller", action: "goToChapter('intro')"},]
+    clé : {
+        subtitle: "prendre les clés",
+        text:"Vous prenez les clés.",
+        img: "./assets/clé.jpg",
+        options: [ {texte:"revenir", action: "goToChapter('sérieux')"},]
     },
+
+
 
     hélicoptère2: {
         subtitle: "hélicoptère2",
-        text:"L'hélicoptère manque de carburant et vous vous écrasez",
+        text:"C'était les clés de l'hélicoptère donc vous le prenez. Malheureusement, l'hélicoptère manque de carburant et vous vous écrasez",
         img: "./assets/explosion.jpg",
         options: [ {texte:"se réveiller", action: "goToChapter('intro')"},]
     },
 
-    métro2: {
+    metro2: {
         subtitle: "metro2",
-        text:"vous prenez le métro et vous arrivez chez vous après une longue journée au travail. Vos collègues vous appel pour vous inviter à une fête. Voulez-vous y allez ou vous reposer chez vous?",
+        text:"Vous prenez le métro et vous arrivez chez vous après une longue journée au travail. Vos collègues vous appel pour vous inviter à une fête. Voulez-vous y allez ou vous reposez chez vous?",
         img: "./assets/salon.jpg",
         options: [{texte:"dormir", action: "goToChapter('dormir')"},
      {texte:"aller à la fête", action: "goToChapter('fête')"},]
@@ -135,14 +137,14 @@ let chaptersObj = {
 
     dormir: {
         subtitle: "dormir",
-        text:"Vous décidez de dormir plus tôt au lieu d'allez à la fête, mais vous culpabilisez et vous mourez.",
+        text:"Vous décidez de dormir plus tôt qu'allez à la fête, mais vous culpabilisez et vous mourez.",
         img: "./assets/culpabilise.jpg",
         options: [{texte:"se réveiller", action: "goToChapter('intro')"},]
     },
 
     fête :{
         subtitle: "fête",
-        text:"Vous décidez d'aller à la fête et vous vous amusez. Ne vous coucher pas trop tard demain vous retravaillez.",
+        text:"Vous décidez d'aller à la fête et vous vous amusez. Ne vous coucher pas trop tard demain vous retravaillez!",
         img: "./assets/fête.jpg",
         options: [ { texte:"se réveiller", action: "goToChapter('intro')"},]
     },
@@ -158,21 +160,43 @@ function goToChapter(chapterName){
     document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
     document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
-    let choix = document.querySelector(".choix .no1").innerHTML= chaptersObj[chapterName]["options"][0]["texte"];
-    choix = document.querySelector(".choix .no2").innerHTML= chaptersObj[chapterName]["options"][1]["texte"];
-    choix = document.querySelector(".choix .no3").innerHTML= chaptersObj[chapterName]["options"][2]["texte"];
+    
+    let choix = document.querySelector(".choix");
+    choix.innerHTML="";
 
-    for(let index = 0; index < chaptersObj[chapterName].options.lenght; index++) {
-        choix[0].onclick= options[index]["action"];
-        choix[1].onclick= options[index]["action"];
-        choix[2].onclick= options[index]["action"];
+    for(element of chaptersObj[chapterName]['options']) {
+        let button = document.createElement("button");
+        button.setAttribute("onclick", element["action"]);
+        button.setAttribute("type", "button");
+        button.appendChild(document.createTextNode(element["texte"]));
+        choix.appendChild(button);
+        
     }
 };
+goToChapter("intro");
 
-    // for(chaptersObj = 0; chaptersObj <= 2; chaptersObj++) {
-    //document.querySelector(".choix .no1").innerHTML.onclick= chaptersObj[chapterName]["options"][0]["texte"]["action"];
-    //document.querySelector(".choix .no2").innerHTML.onclick= chaptersObj[chapterName]["options"][1]["texte"]["action"];
-    //document.querySelector(".choix .no3").innerHTML.onclick= chaptersObj[chapterName]["options"][2]["texte"]["action"];}
+
+let key = false;
+
+function keytrue() {
+    key = true;
+    goToChapter("clé");
+};
+
+function keyStatus() {
+    if (key == true) {
+        goToChapter("hélicoptère2");
+    }
+    if (key == false){
+        goToChapter("metro2");
+    }
+}
+
+function keyfalse() {
+    key = false;
+    goToChapter("lentement");
+}
+
     
 
 
