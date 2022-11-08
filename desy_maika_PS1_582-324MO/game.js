@@ -54,7 +54,7 @@ let chaptersObj = {
     hélicoptère : {
         subtitle: "hélicoptère",
         text:"Vous prenez l'hélicoptère et vous arrivez au travail. Vous voyez vos collègues. Que faites-vous?",
-        img: "./assets/hélicoptère.jpg",
+        img: "./assets/hélico.gif",
         options: [ {texte:"ignorer", action: "goToChapter('ignorer')"},
      {texte:"saluer", action: "goToChapter('saluer')"},]},
 
@@ -145,7 +145,7 @@ let chaptersObj = {
     fête :{
         subtitle: "fête",
         text:"Vous décidez d'aller à la fête et vous vous amusez. Ne vous coucher pas trop tard demain vous retravaillez!",
-        img: "./assets/fête.jpg",
+        img: "./assets/parygif.gif",
         options: [ { texte:"se réveiller", action: "goToChapter('intro')"},]
     },
 

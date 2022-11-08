@@ -25,8 +25,8 @@ body {
 }
 
 img {
-    width: 800px;
-    height: 420px;
+    width: 700px;
+    height: 385px;
     vertical-align: middle;
     display: inline;
     margin: 0;
@@ -76,5 +76,7 @@ button{
     font-family: 'Ubuntu Mono', monospace;
     font-size: 17px;
     text-align: center;
+    margin: 15px 15px;
+    padding: 10px;
 }
 
