@@ -74,9 +74,9 @@ button{
     border: 5px solid #8097e2;
     border-radius: 10px;
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 17px;
+    font-size: 15px;
     text-align: center;
-    margin: 15px 15px;
-    padding: 10px;
+    margin: 15px 17px;
+    padding: 8px;
 }
 

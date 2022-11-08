@@ -90,7 +90,7 @@ let chaptersObj = {
 
     saluer : {
         subtitle: "saluer",
-        text:"Vous saluez vos collègues et vous vous faites plein d'amis. Vous avez tellement une belle attitude que votre patron vous appel à son bureau. Vous arrivez à son bureau pour parler. Vou;ez vous faire une blague ou rester sérieux?",
+        text:"Vous saluez vos collègues et vous vous faites plein d'amis. Vous avez tellement une belle attitude que votre patron vous appel à son bureau. Vous arrivez à son bureau pour parler. Voulez-vous faire une blague ou rester sérieux?",
         img: "./assets/collegue.jpg",
         options:[ {texte:"blague", action: "goToChapter('blague')"},
     {texte:"sérieux", action: "goToChapter('sérieux')"},]
@@ -165,14 +165,17 @@ function goToChapter(chapterName){
     let choix = document.querySelector(".choix");
     choix.innerHTML="";
 
+    
+
     for(element of chaptersObj[chapterName]['options']) {
         let button = document.createElement("button");
         button.setAttribute("onclick", element["action"]);
         button.setAttribute("type", "button");
+        button.getAttribute("type").includes("mp3");
         button.appendChild(document.createTextNode(element["texte"]));
         choix.appendChild(button);
-        
     }
+
 };
 goToChapter("intro");
 
