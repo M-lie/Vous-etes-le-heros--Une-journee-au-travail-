@@ -145,7 +145,8 @@ let chaptersObj = {
     fête :{
         subtitle: "fête",
         text:"Vous décidez d'aller à la fête et vous vous amusez. Ne vous coucher pas trop tard demain vous retravaillez!",
-        img: "./assets/parygif.gif",
+        video: "./assets/giphy.mp4",
+        img:"./assets/fête.jpg",
         options: [ { texte:"se réveiller", action: "goToChapter('intro')"},]
     },
 
@@ -160,7 +161,15 @@ function goToChapter(chapterName){
     document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
     document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
+    let video=document.querySelector(".imgchanger").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video"></video>`;
+if(chaptersObj[chapterName]["video"] == true){
+    video.innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video"></video>`;
+ video.play();
+}
 
+else {
+    document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
+}
     
     let choix = document.querySelector(".choix");
     choix.innerHTML="";
