@@ -54,6 +54,7 @@ let chaptersObj = {
     hélicoptère : {
         subtitle: "hélicoptère",
         text:"Vous prenez l'hélicoptère et vous arrivez au travail. Vous voyez vos collègues. Que faites-vous?",
+        video: "./assets/hélico.mp4",
         img: "./assets/hélico.gif",
         options: [ {texte:"ignorer", action: "goToChapter('ignorer')"},
      {texte:"saluer", action: "goToChapter('saluer')"},]},
@@ -161,10 +162,9 @@ function goToChapter(chapterName){
     document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
     document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
-    document.querySelector(".imgchanger").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video" autoplay loop></video>`;
-    let video;
-   if(video == true){
-        video=document.querySelector(".imgchanger").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video" autoplay loop></video>`;
+   
+   if(chaptersObj[chapterName]["video"]){
+        document.querySelector(".imgchanger").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video" autoplay loop muted></video>`;
    }
 else {
         document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
@@ -179,14 +179,19 @@ else {
         let button = document.createElement("button");
         button.setAttribute("onclick", element["action"]);
         button.setAttribute("type", "button");
-        button.getAttribute("type").includes("mp3");
+        button.getAttribute("type");
         button.appendChild(document.createTextNode(element["texte"]));
         choix.appendChild(button);
         localStorage.setItem("chaptersObj", chapterName);
     }
 
-
-    
+    const btn = document.querySelectorAll('button');
+const audio = new Audio('./assets/transit.mp3')
+for(element of btn){
+element.addEventListener('click', function() {
+  audio.play();
+});
+}
 };
 goToChapter("intro");
 

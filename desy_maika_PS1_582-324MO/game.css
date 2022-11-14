@@ -33,7 +33,6 @@ img {
 }
 
 video {
-    position:absolute;
     width: 700px;
     height: 385px;
     vertical-align: middle;
