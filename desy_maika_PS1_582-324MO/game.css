@@ -33,6 +33,7 @@ img {
 }
 
 video {
+    position:absolute;
     width: 700px;
     height: 385px;
     vertical-align: middle;
@@ -40,7 +41,9 @@ video {
     margin: 0;
 }
 
+
 .imgchanger {
+   
     text-align: center;
 }
 

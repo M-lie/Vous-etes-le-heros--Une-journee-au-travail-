@@ -146,7 +146,7 @@ let chaptersObj = {
         subtitle: "fête",
         text:"Vous décidez d'aller à la fête et vous vous amusez. Ne vous coucher pas trop tard demain vous retravaillez!",
         video: "./assets/giphy.mp4",
-        img:"./assets/fête.jpg",
+        img: "./assets/fête.jpg",
         options: [ { texte:"se réveiller", action: "goToChapter('intro')"},]
     },
 
@@ -161,16 +161,15 @@ function goToChapter(chapterName){
     document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
     document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
-    let video=document.querySelector(".imgchanger").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video"></video>`;
-if(chaptersObj[chapterName]["video"] == true){
-    video.innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video"></video>`;
- video.play();
+    document.querySelector(".imgchanger").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video" autoplay loop></video>`;
+    let video;
+   if(video == true){
+        video=document.querySelector(".imgchanger").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video" autoplay loop></video>`;
+   }
+else {
+        document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
 }
 
-else {
-    document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
-}
-    
     let choix = document.querySelector(".choix");
     choix.innerHTML="";
 
@@ -183,8 +182,11 @@ else {
         button.getAttribute("type").includes("mp3");
         button.appendChild(document.createTextNode(element["texte"]));
         choix.appendChild(button);
+        localStorage.setItem("chaptersObj", chapterName);
     }
 
+
+    
 };
 goToChapter("intro");
 
@@ -195,6 +197,7 @@ let key = false;
 function keytrue() {
     key = true;
     goToChapter("clé");
+    localStorage.setItem("key", key);
 };
 
 function keyStatus() {
@@ -204,10 +207,12 @@ function keyStatus() {
     if (key == false){
         goToChapter("metro2");
     }
+    localStorage.setItem("key", key);
 };
 
 function keyfalse() {
     key = false;
     goToChapter("lentement");
+    localStorage.setItem("key", key);
 };
 
