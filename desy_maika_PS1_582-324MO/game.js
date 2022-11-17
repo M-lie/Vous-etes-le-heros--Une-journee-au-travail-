@@ -161,13 +161,13 @@ function goToChapter(chapterName){
     console.log(chaptersObj[chapterName]["text"]);
     document.querySelector(".titre").innerHTML=chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML= chaptersObj[chapterName]["text"];
-    document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
+    document.querySelector(".imgvideo").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
    
    if(chaptersObj[chapterName]["video"]){
-        document.querySelector(".imgchanger").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video" autoplay loop muted></video>`;
+        document.querySelector(".imgvideo").innerHTML=`<video src="${chaptersObj[chapterName]["video"]}" class="video" autoplay loop muted></video>`;
    }
 else {
-        document.querySelector(".imgchanger").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
+        document.querySelector(".imgvideo").innerHTML=`<img src="${chaptersObj[chapterName]["img"]}" class="travail">`;
 }
 
     let choix = document.querySelector(".choix");
