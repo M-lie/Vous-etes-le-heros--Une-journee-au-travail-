@@ -183,7 +183,10 @@ else {
         button.appendChild(document.createTextNode(element["texte"]));
         choix.appendChild(button);
         localStorage.setItem("chaptersObj", chapterName);
+        
     }
+
+   
 
     const btn = document.querySelectorAll('button');
 const audio = new Audio('./assets/transit.mp3')
@@ -193,8 +196,15 @@ element.addEventListener('click', function() {
 });
 }
 };
-goToChapter("intro");
 
+
+if(localStorage.getItem("chaptersObj")){
+    goToChapter(localStorage.getItem("chaptersObj"))
+}
+
+else{
+goToChapter("intro");
+}
 
 
 let key = false;
