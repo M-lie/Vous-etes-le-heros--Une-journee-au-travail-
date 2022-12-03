@@ -87,10 +87,17 @@ button{
     font-size: 15px;
     text-align: center;
     margin: 5px 17px;
-    padding: 8px;
+    padding:8px;
 }
 
 div.start{
     align-self: flex-end;
     
+}
+
+label{
+    align-self: flex-start;
+    align-items: flex-end;
+    font-family: 'Ubuntu Mono', monospace;
+    margin-top: -20px;
 }

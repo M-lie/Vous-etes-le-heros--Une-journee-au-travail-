@@ -187,16 +187,25 @@ else {
         
     }
 
-   
+    let son = document.querySelector(".Son");
 
     const btn = document.querySelectorAll('button');
 const audio = new Audio('./assets/transit.mp3')
 for(element of btn){
 element.addEventListener('click', function() {
-  audio.play();
+    if( son.checked == true){
+        audio.play();
+    }
+    
+    if( son.checked == false){
+        audio.pause();
+    }
 });
 }
 };
+
+
+
 
 
 if(localStorage.getItem("chaptersObj")){
@@ -248,3 +257,7 @@ function keyfalse() {
     resetArr.addEventListener("click", function(){
         reset();
     });
+
+ 
+
+
