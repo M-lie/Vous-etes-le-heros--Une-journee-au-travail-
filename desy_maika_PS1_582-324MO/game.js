@@ -43,7 +43,8 @@ let chaptersObj = {
         img: "./assets/transport.jpg",
         options: [{ texte: "autobus", action: "goToChapter('autobus')"},
     { texte:"hélicoptère", action: "goToChapter('hélicoptère')"},
- { texte:"métro", action: "goToChapter('metro')"},]},
+ { texte:"métro", action: "goToChapter('metro')"},
+ ]},
 
     autobus : {
         subtitle: "autobus",
@@ -231,3 +232,19 @@ function keyfalse() {
     localStorage.setItem("key", key);
 };
 
+
+    
+
+    function reset() {
+            localStorage.removeItem("key", key);
+            localStorage.clear();
+            goToChapter("intro");
+        
+    };
+
+    
+    let resetArr = document.querySelector(".reset");
+
+    resetArr.addEventListener("click", function(){
+        reset();
+    });
