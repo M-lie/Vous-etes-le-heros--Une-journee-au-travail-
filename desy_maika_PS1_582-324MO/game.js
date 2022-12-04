@@ -174,7 +174,7 @@ else {
     let choix = document.querySelector(".choix");
     choix.innerHTML="";
 
-    
+
 
     for(element of chaptersObj[chapterName]['options']) {
         let button = document.createElement("button");
@@ -189,7 +189,7 @@ else {
 
     let son = document.querySelector(".Son");
 
-    const btn = document.querySelectorAll('button');
+const btn = document.querySelectorAll('button');
 const audio = new Audio('./assets/transit.mp3')
 for(element of btn){
 element.addEventListener('click', function() {
@@ -202,6 +202,9 @@ element.addEventListener('click', function() {
     }
 });
 }
+
+
+
 };
 
 
@@ -258,6 +261,20 @@ function keyfalse() {
         reset();
     });
 
- 
+ let body = document.querySelector("body");
 
 
+body.addEventListener("click", function() {
+    document.body.className="chaptersObj";
+    
+});
+
+/*body.addEventListener("click", function() {
+    document.body.classList.remove('chapitre');
+    document.body.className=innerHTML="${chaptersObj[chapterName]['subtitle']}"]
+});*/
+
+/*body.addEventListener("click", function() {
+    document.body.classList.remove('chapitre');
+document.querySelector(".chapitre").innerText="${chaptersObj[chapterName]['subtitle']}";
+});*/
