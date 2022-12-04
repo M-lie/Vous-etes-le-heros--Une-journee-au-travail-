@@ -14,9 +14,9 @@ body {
 .game {
     background-color: lightsteelblue;
     
-    min-width: 400px;
+    min-width: 900px;
     max-width: 900px;
-    min-height: 100px;
+    max-height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +26,7 @@ body {
 
 img {
     width: 700px;
-    height: 370px;
+    height: 355px;
     vertical-align: middle;
     display: inline;
     margin: 0px;
@@ -34,7 +34,7 @@ img {
 
 video {
     width: 700px;
-    height: 385px;
+    height: 355px;
     vertical-align: middle;
     display:inline-block;
     margin: 0;
@@ -61,6 +61,7 @@ h2 {
 
 p{
     font-family: 'Ubuntu Mono', monospace;
+    
 }
 
 .choix {
@@ -86,7 +87,7 @@ button{
     font-family: 'Ubuntu Mono', monospace;
     font-size: 15px;
     text-align: center;
-    margin: 5px 17px;
+    margin:3px 17px;
     padding:8px;
 }
 
@@ -99,5 +100,25 @@ label{
     align-self: flex-start;
     align-items: flex-end;
     font-family: 'Ubuntu Mono', monospace;
-    margin-top: -20px;
+    margin-top: -25px;
+}
+
+.fête {
+    background-color: rgb(87, 235, 255);
+  
+}
+
+
+
+.fête .game{
+    background-color: rgb(33, 255, 96);
+}
+
+.fête .game:hover{
+    background-color: rgb(255, 0, 212);
+}
+
+.fête button{
+    background-color: rgb(255, 225, 0);
+    border: 5px solid  rgb(196, 2, 255);
 }
