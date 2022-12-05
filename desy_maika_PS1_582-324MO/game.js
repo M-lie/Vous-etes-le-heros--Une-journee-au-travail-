@@ -195,7 +195,7 @@ else {
     let son = document.querySelector(".Son");
 
 const btn = document.querySelectorAll('button');
-const audio = new Audio('./assets/transit.mp3')
+const audio = new Audio('./assets/transition.mp3')
 for(element of btn){
 element.addEventListener('click', function() {
     if( son.checked == true){

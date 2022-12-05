@@ -1,8 +1,7 @@
-html {
-    background-color: slategrey;
-}
+
 
 body {
+    background-color: slategrey;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -78,17 +77,17 @@ p{
 
 button{
     width: 150px;
-    height: 52px;
+    height: 53px;
     display: flex;
     justify-content: center;
     background-color: slategrey;
     border: 5px solid #8097e2;
     border-radius: 10px;
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     margin:3px 17px;
-    padding:8px;
+    padding: 10px;
 }
 
 div.start{
@@ -112,7 +111,10 @@ label{
 
 .fête .game{
     background-color: rgb(33, 255, 96);
+    color: rgb(40, 37, 245);
 }
+
+
 
 .fête .game:hover{
     background-color: rgb(255, 0, 212);
@@ -120,5 +122,13 @@ label{
 
 .fête button{
     background-color: rgb(255, 225, 0);
-    border: 5px solid  rgb(196, 2, 255);
+    border: 5px solid  rgb(133, 2, 255);
+    color:rgb(40, 37, 245);
+}
+
+ .metro{
+    
+    background-image: linear-gradient(   rgba(112, 128, 144, 0.784),  rgba(112, 128, 144, 0.784)),url("./assets/bureau.jpg");
+    background-repeat: no-repeat;
+    
 }
