@@ -1,5 +1,12 @@
 let chaptersObj = {
      
+    jeu : {
+      
+            subtitle: "Venez jouer!",
+            text:"Veuillez commencer en appuyant sur commencer.",
+        img: "./assets/work.jpg",
+        options: [
+        {texte:"commencer", action: "goToChapter('intro')"},]},
     
     intro : {
         subtitle: 'Réveille',
@@ -258,7 +265,7 @@ function keyfalse() {
     function reset() {
             localStorage.removeItem("key", key);
             localStorage.clear();
-            goToChapter("intro");
+            goToChapter("jeu");
         
     };
 

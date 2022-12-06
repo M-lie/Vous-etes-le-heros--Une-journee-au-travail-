@@ -127,8 +127,7 @@ label{
 }
 
  .metro{
-    
-    background-image: linear-gradient(   rgba(112, 128, 144, 0.784),  rgba(112, 128, 144, 0.784)),url("./assets/bureau.jpg");
+    background-image: linear-gradient(   rgba(112, 128, 144, 0.784),  rgba(112, 128, 144, 0.784)),url("./assets/entreprise.jpg");
     background-repeat: no-repeat;
-    
+   background-size: 100%;
 }
