@@ -6,14 +6,14 @@ let chaptersObj = {
             text:"Veuillez commencer en appuyant sur commencer.",
         img: "./assets/work.jpg",
         options: [
-        {texte:"commencer", action: "goToChapter('intro')"},]},
+        {texte:"commencer", action: "keyfalse()"},]},
     
     intro : {
         subtitle: 'Réveille',
         text:"Vous vous réveillez en retard pour votre journée de travail. Voulez-vous vous dépêchez ou y allez lentement?",
         img: "./assets/lit.jpg",
         options:[{texte: "se dépêcher", action:"goToChapter('dépêcher')"},
-        {texte: "lentement", action:"keyfalse()"},]},
+        {texte: "lentement", action:"goToChapter('lentement')"},]},
 
     dépêcher : {
         subtitle: "C'est le drame",
@@ -138,7 +138,7 @@ let chaptersObj = {
         subtitle: "Crash",
         text:"C'est les clés de l'hélicoptère. Malheureusement, l'hélicoptère manque de carburant et vous vous écrasez",
         img: "./assets/explosion.jpg",
-        options: [ {texte:"se réveiller", action: "goToChapter('intro')"},]
+        options: [ {texte:"se réveiller", action: "keyfalse()"},]
     },
 
     metro2: {
@@ -255,7 +255,7 @@ function keyStatus() {
 
 function keyfalse() {
     key = false;
-    goToChapter("lentement");
+    goToChapter("intro");
     localStorage.setItem("key", key);
 };
 
